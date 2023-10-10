@@ -3,6 +3,7 @@
     mudarPaginaCadastro();
     buscarCep();
     cadastrar();
+    atualizar();
 
 });
 
@@ -102,3 +103,4 @@ function cadastrar() {
 
     });
 }
+

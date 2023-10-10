@@ -1,0 +1,128 @@
+﻿@page
+@model Conceitos.Pages.MeusDadosModel
+@{
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<style>
+    .cadastro {
+        padding-top: 40px;
+        text-align: center;
+    }
+
+    .campo-comum {
+        height: 40px;
+        width: 25%;
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        width: 200px;
+        margin: 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #ff5733;
+        }
+
+    .form-section {
+        display: none; /* Esconde todas as seções inicialmente para controlar o radio */
+    }
+
+    .radio-section {
+        margin: 10px;
+    }
+
+    .input-desabilitado{
+        background:lightgray;
+        border: 1px solid darkGray;
+    }
+
+</style>
+
+<div class="cadastro">
+    <h2>Meus dados</h2>
+    <form class="formulariosDados" method="post">
+
+        <div class="form-section" id="secao1">
+            <div>
+                <label for="Nome"></label>
+                <input type="text" value="@Model.usuario.Nome" id="Nome" placeholder="Nome" class="campo-comum" name="Nome" disabled>
+
+                <label for="Sobrenome"></label>
+                <input type="text" id="Sobrenome" value="@Model.usuario.Sobrenome" placeholder="Sobrenome" class="campo-comum" name="Sobrenome" disabled>
+            </div>
+            <div>
+                <label for="Sexo"></label>
+                <input type="text" id="Sexo" value="@Model.usuario.Sexo" class="campo-comum" name="Sexo" disabled>
+
+                <label for="DataNascimento"></label>
+                <input type="text" id="DataNascimento" value="@Model.usuario.DataNascimento" class="campo-comum" name="DataNascimento" disabled>
+            </div>
+            <div>
+                <label for="Email"></label>
+                <input type="email" id="Email" placeholder="Email" class="campo-comum" value="@Model.usuario.Email" name="Email" disabled>
+
+                <label for="Senha"></label>
+                <input type="password" id="Senha" class="campo-comum" placeholder="Senha" value="@Model.usuario.Senha" name="Senha">
+            </div>
+        </div>
+
+        <div class="form-section" id="secao2">
+            <div>
+                <label for="CEP"></label>
+                <input type="text" id="CEP" placeholder="CEP" value="@Model.usuario.CEP" class="campo-comum CEP" name="CEP" required>
+                <label for="Endereco"></label>
+                <input type="text" id="Endereco" placeholder="Endereco" value="@Model.usuario.Endereco" class="campo-comum" name="Endereco" required>
+            </div>
+            <div>
+                <label for="Bairro"></label>
+                <input type="text" id="Bairro" placeholder="Bairro" value="@Model.usuario.Bairro" class="campo-comum" name="Bairro" required>
+                <label for="Numero"></label>
+                <input type="text" id="Numero" placeholder="Numero" class="campo-comum" value="@Model.usuario.Numero" name="Numero" required>
+            </div>
+            <div>
+                <label for="Cidade"></label>
+                <input type="text" id="Cidade" class="campo-comum" placeholder="Cidade" value="@Model.usuario.Cidade" name="Cidade" required>
+                <label for="Estado"></label>
+                <input type="text" id="Estado" class="campo-comum" placeholder="Estado" value="@Model.usuario.Estado" name="Estado" required>
+            </div>
+        </div>
+
+        <div class="radio-section">
+            <input type="radio" id="secao1Radio" name="secao" value="secao1" checked>
+            <label for="secao1Radio"></label>
+            <input type="radio" id="secao2Radio" name="secao" value="secao2">
+            <label for="secao2Radio"></label>
+        </div>
+
+        <div>
+            <button type="submit" class="btn-atualizar">Atualizar</button>
+        </div>
+    </form>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        $('.formulariosDados input').each(function () {
+            if ($(this).prop('disabled')) {
+                $(this).addClass('input-desabilitado');
+                // $(this).css('color', 'darkgray');
+            }
+        });
+    });
+
+</script>

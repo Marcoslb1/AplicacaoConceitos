@@ -21,7 +21,6 @@ namespace Conceitos.Controllers
             _signInManager = signInManager;
             _log = logger; 
         }
-
         public class Login
         {
             [Required(ErrorMessage = "O campo e-mail é obrigatório")]
@@ -32,7 +31,6 @@ namespace Conceitos.Controllers
             public string Senha { get; set; }
             public bool RememberMe { get; set; }
         }
-
         [HttpPost]
         [Route("Usuario/buscarCep")]
         //[frombody] -> receber informações do ajax nos formatos json/xml
@@ -40,7 +38,6 @@ namespace Conceitos.Controllers
         {
             return Ok();
         }
-
         [HttpPost]
         [Route("Usuario/cadastrar")]
         //[fromform] -> receber informações por meio de formulários formData

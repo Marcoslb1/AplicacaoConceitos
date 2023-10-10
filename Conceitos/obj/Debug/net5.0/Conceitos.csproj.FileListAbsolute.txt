@@ -128,3 +128,4 @@ C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\System.Mem
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\System.Text.Encodings.Web.dll
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\System.Text.Json.dll
+C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\obj\Debug\net5.0\Razor\Pages\MeusDados.cshtml.g.cs
