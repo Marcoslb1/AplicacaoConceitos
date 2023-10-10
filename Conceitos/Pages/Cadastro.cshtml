@@ -1,0 +1,125 @@
+﻿@page
+@using Conceitos.Model;
+@*@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager*@
+@model CadastroModel
+@*@{
+    var currentUser = await UserManager.GetUserAsync(User);
+    if (SignInManager.IsSignedIn(User) && currentUser != null)
+    {
+        Response.Redirect("/index");
+    }
+}*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<style>
+    .cadastro {
+        padding-top: 40px;
+        text-align: center;
+    }
+
+    .campo-comum {
+        height: 40px;
+        width: 40%;
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        width: 200px;
+        margin:10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #ff5733;
+        }
+
+    .form-section {
+        display: none; /* Esconde todas as seções inicialmente para controlar o radio */
+    }
+
+    .radio-section {
+        margin: 10px;
+    }
+
+</style>
+
+<div class="cadastro">
+    <h2>Cadastro de Usuário</h2>
+    <form action="#" method="post">
+
+        <div class="form-section" id="secao1">
+            <div>
+                <label for="Nome"></label>
+                <input type="text" id="Nome" placeholder="Nome" class="campo-comum" name="Nome" required>
+                <label for="Sobrenome"></label>
+                <input type="text" id="Sobrenome" placeholder="Sobrenome" class="campo-comum" name="Sobrenome" required>
+            </div>
+            <div>
+                <label for="Sexo"></label>
+                <select id="Sexo" name="sexo" class="campo-comum">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <label for="DataNascimento"></label>
+                <input type="date" id="DataNascimento" class="campo-comum" name="DataNascimento" required>
+            </div>
+            <div>
+                <label for="Email"></label>
+                <input type="email" id="Email" placeholder="Email" class="campo-comum" name="Email" required>
+                <label for="ConfirmacaoEmail"></label>
+                <input type="email" id="ConfirmacaoEmail" placeholder="Confirmação Email" class="campo-comum" name="ConfirmacaoEmail" required>
+            </div>
+            <div>
+                <label for="Senha"></label>
+                <input type="password" id="Senha" class="campo-comum" placeholder="Senha" name="Senha" required>
+                <label for="ConfirmacaoSenha"></label>
+                <input type="password" id="ConfirmacaoSenha" class="campo-comum" placeholder="Senha" name="ConfirmacaoSenha" required>
+            </div>
+        </div>
+
+        <div class="form-section" id="secao2">
+            <div>
+                <label for="CEP"></label>
+                <input type="text" id="CEP" placeholder="CEP" class="campo-comum CEP" name="CEP" required>
+                <label for="Endereco"></label>
+                <input type="text" id="Endereco" placeholder="Endereco" class="campo-comum" name="Endereco" required>
+            </div>
+            <div>
+                <label for="Bairro"></label>
+                <input type="text" id="Bairro" placeholder="Bairro" class="campo-comum" name="Bairro" required>
+                <label for="Numero"></label>
+                <input type="text" id="Numero" placeholder="Numero" class="campo-comum" name="Numero" required>
+            </div>
+            <div>
+                <label for="Cidade"></label>
+                <input type="text" id="Cidade" class="campo-comum" placeholder="Cidade" name="Cidade" required>
+                <label for="Estado"></label>
+                <input type="text" id="Estado" class="campo-comum" placeholder="Estado" name="Estado" required>
+            </div>
+        </div>
+
+        <div class="radio-section">
+            <input type="radio" id="secao1Radio" name="secao" value="secao1" checked>
+            <label for="secao1Radio"></label>
+            <input type="radio" id="secao2Radio" name="secao" value="secao2">
+            <label for="secao2Radio"></label>
+        </div>
+
+        <div>
+            <button type="submit" class="btn-cadastrar">Cadastrar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,45 @@
+﻿@using Conceitos.Model;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+    <style>
+    .btn-logout {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        width: 120px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.7s ease;
+    }
+
+    .btn-logout:hover {
+            background-color: #ff5733;
+        }
+    </style>
+
+<ul>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li>
+            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Olá @User.Identity.Name!</a>
+        </li>
+        <li>
+            <form asp-controller="usuario" asp-action="logout" >
+                <button type="submit" class="btn-logout">Sair</button>
+            </form>
+
+        </li>
+    }
+    else
+    {
+        <li>
+            <a href="/Cadastro">Cadastrar</a>
+        </li>
+        <li>
+            <a href="/Login">Login</a>
+        </li>
+    }
+</ul>

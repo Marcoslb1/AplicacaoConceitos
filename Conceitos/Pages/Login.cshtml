@@ -1,0 +1,53 @@
+﻿@page "/login"
+
+<style>
+    .login {
+        padding-top:40px;
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .campo-comum {
+        height:40px;
+        width: 40%;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        margin:10px;
+        width:200px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #ff5733;
+        }
+</style>
+
+<div class="login">
+    <h3>Login</h3>
+    <form asp-controller="usuario" asp-action="login">
+        <div>
+            <label for="Email"></label>
+            <input type="text" id="Email" placeholder="Email" class="campo-comum" name="Email" required>
+        </div>
+        <div>
+            <label for="Senha"></label>
+            <input type="password" id="Senha" name="Senha" class="campo-comum" placeholder="************" required>
+        </div>
+        <button type="submit">Entrar</button>
+    </form>
+</div>
