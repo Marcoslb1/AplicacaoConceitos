@@ -1,2 +1,2 @@
 # AplicacaoConceitos
-Aplicação modelo para inicio de projeto estruturado.
+Aplicação modelo para inicio de projeto seguindo os padrões de clean architecture.
