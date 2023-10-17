@@ -3,7 +3,6 @@
     mudarPaginaCadastro();
     buscarCep();
     cadastrar();
-    atualizar();
 
 });
 

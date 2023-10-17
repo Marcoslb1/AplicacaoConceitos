@@ -1,0 +1,104 @@
+﻿@page "/tarefas"
+@model Conceitos.Pages.TarefasModel
+@{
+}
+<style>
+    .div-tabela {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .tabela {
+        border-collapse: collapse;
+        margin: auto;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        border-bottom: 1px solid gray;
+    }
+
+    tfoot tr {
+        border-bottom: 1px solid gray;
+    }
+
+    tr td:hover {
+        background-color: #eee;
+    }
+
+    .centralizar {
+        text-align: center;
+    }
+</style>
+
+<div class="div-tabela">
+    @if (!Model.tarefas.Any())
+    {
+        <p>Você não possui tarefas cadastradas, insira novas tarefas</p>
+        <a href="#">Incluir</a>
+    }
+    else
+    {
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>
+                        Titulo
+                    </th>
+                    <th>
+                        Descrição
+                    </th>
+                    <th>
+                        Responsável
+                    </th>
+                    <th>
+                        Situação
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.tarefas)
+                {
+                    <tr>
+                        <td>
+                            @item.Nome
+                        </td>
+                        <td>
+                            @item.Descricao
+                        </td>
+                        <td>
+                            @item.Usuario.Nome
+                        </td>
+                        <td>
+                            @item.Situacao
+                        </td>
+                        <td>
+                            <div class="centralizar">
+                                <a href="#">Alterar</a> |
+                                <a asp-controller="Tarefa" asp-action="Deletar" asp-route-id="@item.Id">Deletar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                </tr>
+            </tfoot>
+        </table>
+        <a href="#">Incluir</a>
+    }
+</div>
+
+<script>
+
+</script>

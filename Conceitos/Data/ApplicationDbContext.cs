@@ -14,5 +14,6 @@ namespace Conceitos.Data
         {
         }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Tarefa> Tarefas { get; set; }
     }
 }

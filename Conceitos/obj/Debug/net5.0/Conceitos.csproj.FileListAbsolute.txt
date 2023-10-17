@@ -1,6 +1,5 @@
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\appsettings.json
-C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\Connected Services\WsCep\ConnectedService.json
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\Conceitos.StaticWebAssets.xml
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\Conceitos.exe
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\Conceitos.deps.json
@@ -129,3 +128,4 @@ C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\System.Run
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\System.Text.Encodings.Web.dll
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\bin\Debug\net5.0\System.Text.Json.dll
 C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\obj\Debug\net5.0\Razor\Pages\MeusDados.cshtml.g.cs
+C:\Users\MarcoNunes\source\repos\Conceitos\Conceitos\obj\Debug\net5.0\Razor\Pages\Tarefas.cshtml.g.cs
