@@ -37,7 +37,7 @@ namespace Conceitos.Controllers
 
             if(tarefa == null)
             {
-                ModelState.AddModelError("Erro", "");
+                ModelState.AddModelError("Erro", "Não foi possível identificar a tarefa.");
                 return UnprocessableEntity(ModelState);
             }
 

@@ -21,4 +21,8 @@
     <PackageReference Include="System.ServiceModel.Security" Version="4.8.*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
 </Project>

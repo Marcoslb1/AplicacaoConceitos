@@ -6,6 +6,20 @@
 
 });
 
+function abre(titulo, descricao) {
+
+    var modal = `<div class="modalConceitos" id="modalConceitos">
+                    <div class="modalconteudo">
+                        <span class="fechar">&times;</span>
+                        <div class="headerModal">${(titulo)}</div>
+                        <div class="conteudo">${descricao}</div>
+                    </div>
+                </div>`;
+
+    $('body').append(modal);
+    $("#modalConceitos").addClass('mostrar');
+}
+
 function mudarPaginaCadastro() {
     const $formSections = $('.form-section');
     const $radioButtons = $('input[type="radio"]');
@@ -70,7 +84,6 @@ function cadastrar() {
         var camposPreenchidos = true;
         $(".campo-comum").each(function () {
             if ($(this).val() === "") {
-                alert("Por favor, preencha todos os campos.");
                 camposPreenchidos = false;
                 return false;
             }
@@ -97,7 +110,7 @@ function cadastrar() {
                 }
             });
         } else {
-
+            abre("Atenção", "Preecha os campos em branco.")
         }
 
     });
