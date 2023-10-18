@@ -1,5 +1,6 @@
 using Conceitos.Data;
 using Conceitos.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Conceitos.Pages
 {
+    [Authorize]
     public class TarefasModel : PageModel
     {
         public List<Tarefa> tarefas;
@@ -18,7 +20,6 @@ namespace Conceitos.Pages
         private readonly ApplicationDbContext _db;
 
         public TarefasModel(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager, ApplicationDbContext db)
-        
         {
             _userManager = userManager;
             _signInManager = signInManager;

@@ -6,11 +6,11 @@
 
 });
 
-function abre(titulo, descricao) {
+function abrePopUp(titulo, descricao) {
 
     var modal = `<div class="modalConceitos" id="modalConceitos">
                     <div class="modalconteudo">
-                        <span class="fechar">&times;</span>
+                        <a class="btnFechar">&times;</a>
                         <div class="headerModal">${(titulo)}</div>
                         <div class="conteudo">${descricao}</div>
                     </div>
@@ -78,14 +78,14 @@ function buscarCep() {
 }
 
 function cadastrar() {
-    $(".btn-cadastrar").click(function (e) {
+
+    $(".btnCadastrar").on('click', function (e) {
         e.preventDefault();
 
         var camposPreenchidos = true;
         $(".campo-comum").each(function () {
             if ($(this).val() === "") {
                 camposPreenchidos = false;
-                return false;
             }
         });
 
@@ -109,10 +109,7 @@ function cadastrar() {
                     alert('erro')
                 }
             });
-        } else {
-            abre("Atenção", "Preecha os campos em branco.")
         }
-
     });
-}
 
+}
